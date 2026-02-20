@@ -6,7 +6,7 @@ import (
 	"fmt"
 
 	"github.com/japsieeee/agent/internal/collector"
-	"github.com/japsieeee/agent/internal/sender"
+	// "github.com/japsieeee/agent/internal/sender"
 )
 
 func main() {
@@ -30,10 +30,10 @@ func main() {
 			fmt.Printf("Network Recv: %d\n", metrics.NetworkRecv)
 			fmt.Println("---------------")
 
-			err = sender.Send(metrics)
-			if err != nil {
-				log.Println("send error:", err)
-			}
+			// err = sender.Send(metrics)
+			// if err != nil {
+			// 	log.Println("send error:", err)
+			// }
 		}
 	}
 }
