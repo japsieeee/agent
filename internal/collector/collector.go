@@ -8,7 +8,7 @@ import (
 	"github.com/shirou/gopsutil/v3/mem"
 	"github.com/shirou/gopsutil/v3/net"
 
-	"github.com/yourname/o8s-agent/internal/models"
+	"github.com/japsieeee/agent/internal/models"
 )
 
 func Collect() (*models.Metrics, error) {
