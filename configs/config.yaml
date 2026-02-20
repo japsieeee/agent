@@ -1,0 +1,36 @@
+# configs/config.yaml
+# ==================
+# General environment
+env: "dev"                    # dev / prod
+agent_id: "server-001"        # unique ID for each server
+
+# Server connection
+server:
+  url: "http://localhost:8080" # o8s server endpoint
+  timeout_seconds: 10          # HTTP/gRPC timeout
+  retry:
+    max_attempts: 3
+    backoff_seconds: 2
+
+# Metrics collection
+metrics:
+  interval_seconds: 30        # how often to collect metrics
+  collect_cpu: true
+  collect_memory: true
+  collect_disk: true
+  collect_network: true
+  disk_paths: ["/"]           # root partition(s) to monitor
+
+# Logging
+logging:
+  level: "info"               # debug / info / warn / error
+  file: "./logs/agent.log"    # log file path (optional)
+  max_size_mb: 50
+  max_backups: 3
+  max_age_days: 7
+
+# Optional batching (future use)
+batch:
+  enabled: true
+  max_batch_size: 1000
+  flush_interval_seconds: 5
